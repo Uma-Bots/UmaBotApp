@@ -1,23 +1,23 @@
 version: '3.1'
 
 volumes:
-  satoiii-volumeiii:
-  satoiii-volumeii:
+  uma-volumeiii:
+  uma-volumeii:
 
 services:
   web1:
     build: rasa
     ports:
-      - "5005:5005"
+      - "5015:5015"
     volumes:
-      - satoiii-volumeiii:/usr/src/app/bot
+      - uma-volumeiii:/usr/src/app/bot
 
   web2:
     build: rasa-x
     ports:
-      - "5002:5002"
+      - "5012:5012"
     volumes:
-      - satoiii-volumeiii:/usr/src/app/bot
+      - uma-volumeiii:/usr/src/app/bot
   
   mongo:
     image: mongo
@@ -26,14 +26,14 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: (boquito&selma321)
     volumes:
-      - satoiii-volumeii:/data/db
+      - uma-volumeii:/data/db
   
 
   mongo-express:
     image: mongo-express
     restart: always
     ports:
-      - 8081:8081
+      - 8082:8082
     environment:
       ME_CONFIG_BASICAUTH_USERNAME: paulista
       ME_CONFIG_BASICAUTH_PASSWORD: (gordalove456)
@@ -46,7 +46,7 @@ services:
     volumes:
       - ./twilio_hook/app:/app
     ports:
-      - "5001:5001"
+      - "5011:5011"
     environment:
       - FLASK_APP=bot.py
       - FLASK_DEBUG=1

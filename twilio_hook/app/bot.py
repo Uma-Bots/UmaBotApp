@@ -17,7 +17,7 @@ def bot_i():
         "sender": "Rasa",
         "message": incoming_msg
     }
-    webhook = 'http://web1:5005/webhooks/rest/webhook'
+    webhook = 'http://web1:5015/webhooks/rest/webhook'
     requests_post = requests.post(webhook, json=var_i)
     json = requests_post.json()
     app.logger.info('requests_post, webhook, var_i:', json, webhook, var_i)
@@ -65,7 +65,7 @@ def bot_ii():
         "message": incoming_msg
     }
     app.logger.info(var_i)
-    webhook = 'http://web1:5005/webhooks/rest/webhook'
+    webhook = 'http://web1:5015/webhooks/rest/webhook'
     requests_post = requests.post(webhook, json=var_i)
     json = requests_post.json()
     app.logger.info([json, var_i])
@@ -84,4 +84,4 @@ def bot_ii():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=True, port=5001)
+    app.run(host="0.0.0.0", debug=True, port=5011)

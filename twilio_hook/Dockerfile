@@ -1,6 +1,6 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.8
 
-ENV LISTEN_PORT 5001
+ENV LISTEN_PORT 5011
 
 EXPOSE 5001
 

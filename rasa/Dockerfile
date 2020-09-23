@@ -5,4 +5,4 @@ RUN pip install rasa
 COPY ./bot ./bot
 WORKDIR /usr/src/app/bot
 CMD rasa run 
-EXPOSE 5005
+EXPOSE 5015
